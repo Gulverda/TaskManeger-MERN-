@@ -35,7 +35,7 @@ function Home() {
                 <p>No todos</p>
             ) : (
                 todos.map((todo) => (
-                    <div key={todo.id}>
+                    <div key={todo.id || Math.random().toString(36)}> {/* Add fallback key */}
                         {todo.task}
                     </div>
                 ))

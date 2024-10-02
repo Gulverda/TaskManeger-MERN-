@@ -1,12 +1,10 @@
-import mongoose from 'mongoose';
+import { Schema, model } from 'mongoose';
 
-const todoSchema = new mongoose.Schema({
-    task: {
-        type: String,
-        required: true,
-    },
+const todoSchema = new Schema({
+    task: { type: String, required: true },
+    // No need to specify _id as Mongoose automatically handles it as ObjectId
 });
 
-const Todo = mongoose.model('Todo', todoSchema);
+const Todo = model('Todo', todoSchema);
 
 export default Todo;
